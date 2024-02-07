@@ -1,0 +1,29 @@
+@use 'assets/css/breakpoint';
+
+.page-container {
+  max-height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+
+  @media #{breakpoint.$mobile-middle} {
+    padding: 20px 40px;
+  }
+}
+
+.page-header-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.page-header {
+  margin-left: 20px;
+  color: var(--white-text-color);
+  font-weight: 600;
+  font-family: Gilroy, sans-serif;
+  text-transform: capitalize;
+}
+
+.tab-header {
+  margin-bottom: 40px;
+}

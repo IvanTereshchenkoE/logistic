@@ -1,0 +1,11 @@
+@use 'assets/css/breakpoint';
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px 20px;
+}
+
+.horizontal-scroll {
+  overflow: hidden;
+}

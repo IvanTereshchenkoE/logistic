@@ -1,0 +1,65 @@
+@use 'assets/css/breakpoint';
+
+.history-page-container {
+  padding: 20px;
+
+  @media #{breakpoint.$mobile-middle} {
+    padding: 20px 40px;
+  }
+}
+
+.history-list-container > div {
+  margin: 20px 0;
+}
+
+.history-list-container > .date {
+  margin: 10px;
+  color: var(--white-text-color);
+  font-weight: 600;
+}
+
+.delete-all-btn {
+  height: fit-content;
+  margin-left: auto;
+  padding: 11px 20px;
+  color: var(--always-white-color);
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  background-color: var(--brand-green-color);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--brand-green-color-hover);
+    transition: all 0.3s ease;
+  }
+}
+
+.page-header {
+  margin-right: 10px;
+  margin-left: 20px;
+  color: var(--white-text-color);
+  font-weight: 600;
+  font-family: Gilroy, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.no-video-in-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 200px);
+  margin: 0;
+}
+
+.skeleton-container {
+  max-width: 810px;
+}

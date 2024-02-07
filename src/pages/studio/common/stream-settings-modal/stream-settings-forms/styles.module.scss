@@ -1,0 +1,32 @@
+$label-input-spacing: 10px;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 0 5px;
+
+  .label {
+    margin-bottom: $label-input-spacing;
+    color: var(--white-text-color);
+    line-height: 20px;
+    cursor: pointer;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  height: 45px;
+  color: white;
+  background-color: var(--studio-input);
+}
+
+.basic-info-wrapper .area-input {
+  height: 200px;
+  color: white;
+  background-color: var(--studio-input);
+}

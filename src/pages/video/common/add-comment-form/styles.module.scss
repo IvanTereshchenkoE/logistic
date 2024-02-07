@@ -1,0 +1,155 @@
+@import 'assets/css/config.scss';
+
+$base-z-index: $page-component-z-index;
+
+.add-comment-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &.for-reply {
+    margin-top: 8px;
+  }
+}
+
+.add-comment-block-user-avatar {
+  width: 44px;
+  height: 44px;
+  margin-right: 15px;
+
+  &.for-reply {
+    width: 34px;
+    height: 34px;
+    margin-right: 12px;
+  }
+}
+
+.add-comment-input {
+  width: 100%;
+  height: auto;
+  margin-top: 5px;
+  padding: 0 0 3px;
+  overflow: hidden;
+  color: var(--white-text-color);
+  font-weight: 400;
+  line-height: 19px;
+  white-space: normal;
+  background: none;
+  border: none;
+  border-bottom: var(--gray-200-input-background) 1px solid;
+  border-radius: 0;
+  resize: none;
+
+  &.for-reply {
+    font-size: 13px;
+  }
+}
+
+.add-comment-input-error {
+  display: none;
+}
+
+.add-comment-input-in-focus {
+  border-bottom: var(--brand-green-color) 1px solid;
+}
+
+.add-comment-input-wrapper {
+  width: 100%;
+
+  & > div {
+    line-height: 18px;
+  }
+}
+
+.add-comment-submit-active {
+  width: 100px;
+  height: 36px;
+  color: var(--always-white-color);
+  transition: all 0.3s ease;
+}
+
+.add-comment-cancel-button {
+  margin-right: 12px;
+  background: transparent;
+  border: 2px;
+  cursor: pointer;
+
+  &:active {
+    color: var(--green-200-header-menu-background);
+    background-color: var(--button-placeholder-light-color);
+  }
+}
+
+.input-block {
+  flex: 1;
+}
+
+.add-comment-form-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding-top: 2px;
+}
+
+.emoji-icon {
+  cursor: pointer;
+
+  path {
+    fill: var(--secondary-text-color);
+  }
+}
+
+.button-block {
+  display: flex;
+  align-items: center;
+}
+
+.add-comment-cancel-button:hover {
+  height: min-content;
+  background: none;
+}
+
+.add-comment-submit-disabled {
+  background-color: var(--gray-200-input-background);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.label-for-reply-form {
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.label-for-edit-form {
+  color: var(--white-text-color);
+  font-size: 14px;
+  line-height: 16px;
+
+  & span {
+    display: block;
+    max-width: 450px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.emoji-block {
+  top: 30px;
+  left: -20px;
+  z-index: $base-z-index + 10;
+
+  & > aside {
+    --epr-picker-width: 520px;
+    --epr-picker-height: 300px;
+
+    @media screen and (max-width: 991px) {
+      --epr-picker-width: 450px;
+    }
+
+    @media screen and (max-width: 575px) {
+      --epr-picker-width: 300px;
+    }
+  }
+}

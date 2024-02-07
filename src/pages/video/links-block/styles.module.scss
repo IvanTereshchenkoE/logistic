@@ -1,0 +1,45 @@
+@use 'assets/css/breakpoint';
+
+.links-block {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+
+  & > div:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  margin: 10px;
+  @media #{breakpoint.$tablet-middle} {
+    margin: 0;
+  }
+}
+
+.videos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recommended-header {
+  margin-bottom: 10px;
+  color: var(--white-text-color);
+  font-size: 20px;
+
+  @media #{breakpoint.$tablet-large} {
+    display: none;
+  }
+}
+
+.loader-block {
+  margin-top: 30px;
+}
+
+.wrapper-for-upload-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.button-upload-videos {
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,40 @@
+.subscription-item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 50px;
+  text-decoration: none;
+}
+
+.channel-avatar {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+  border-radius: 50%;
+
+  & > div {
+    font-size: 12px;
+  }
+}
+
+.channel-name {
+  display: block;
+  flex: 1;
+  padding-right: 12px;
+  overflow: hidden;
+  color: var(--text-gray-color);
+  font-size: 16px;
+  line-height: 28px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+
+.subscription-item:hover {
+  cursor: pointer;
+}
+
+.subscription-item:hover .channel-name {
+  color: var(--white-text-color);
+}

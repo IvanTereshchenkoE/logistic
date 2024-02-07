@@ -1,0 +1,12 @@
+.subscribe-btn {
+  width: 100px;
+  color: var(--always-white-color);
+}
+
+.subscribed {
+  background-color: var(--subscribed-btn-background-color);
+
+  &:hover {
+    background-color: var(--subscribed-btn-hover-background-color);
+  }
+}

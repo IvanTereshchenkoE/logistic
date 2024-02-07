@@ -1,0 +1,126 @@
+@use 'assets/css/breakpoint';
+
+.video-page {
+  display: grid;
+  grid-template:
+    'video-player'
+    'video-info'
+    'side-block'
+    'comments-block' / 100%;
+  max-width: 1700px;
+  margin: auto;
+  padding: 0;
+  column-gap: 20px;
+  @media #{breakpoint.$tablet-large} {
+    grid-template:
+      'video-player side-block'
+      'video-info side-block'
+      'comments-block side-block'
+      '. side-block' / auto 300px;
+  }
+
+  @media #{breakpoint.$desktop-small} {
+    grid-template:
+      'video-player side-block'
+      'video-info side-block'
+      'comments-block side-block'
+      '. side-block' / auto 350px;
+    padding: 20px;
+  }
+}
+
+.side-block {
+  display: flex;
+  grid-area: side-block;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.video-block {
+  grid-area: video-player;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  @media screen and (max-width: 992px) {
+    height: fit-content;
+  }
+}
+
+.chat-block {
+  min-width: 300px;
+  height: 100%;
+  padding: 10px;
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    max-height: 500px;
+  }
+}
+
+.video-info-block {
+  display: flex;
+  grid-area: video-info;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 10px;
+
+  @media screen and (max-width: 560px) {
+    margin-top: 0;
+  }
+}
+
+.video-comment-block {
+  display: flex;
+  grid-area: comments-block;
+  flex-flow: column nowrap;
+  gap: 5px;
+  margin-top: 30px;
+  padding: 10px;
+
+  @media #{breakpoint.$tablet-large} {
+    margin-top: 0;
+  }
+}
+
+.description-container {
+  max-width: 100%;
+  margin-top: 11px;
+  color: var(--text-gray-color);
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 19px;
+}
+
+.video-page hr {
+  width: 100%;
+  height: 1px;
+  margin: 19px 0;
+  color: var(--gray-200-input-background);
+  background-color: var(--gray-200-input-background);
+  border-color: var(--gray-200-input-background);
+  outline-color: var(--gray-200-input-background);
+}
+
+@media #{breakpoint.$tablet-middle} {
+  .video-page {
+    padding: 20px;
+  }
+
+  .video-info-block {
+    padding: 0;
+  }
+
+  .video-comment-block {
+    padding: 0;
+  }
+
+  .chat-block {
+    padding: 0;
+  }
+
+  .description-container {
+    max-width: 65%;
+  }
+}

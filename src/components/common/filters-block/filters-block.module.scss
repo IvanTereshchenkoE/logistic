@@ -1,0 +1,81 @@
+.filter-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 53px;
+  margin-top: 1px;
+  padding: 12px 35px;
+  overflow: hidden;
+  background-color: var(--gray-300-header-menu-background);
+
+  @media screen and(max-width: 900px) {
+    padding: 12px 20px;
+  }
+
+  &.in-recommended-section {
+    width: auto;
+    padding: 12px 0;
+  }
+}
+
+.filter-block-wrapper {
+  display: flex;
+  width: fit-content;
+  overflow: auto;
+
+  &.in-recommended-section {
+    padding: 0 10px;
+  }
+}
+
+.filter-block-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-item {
+  display: block;
+  min-width: fit-content;
+  padding: 4px 12px;
+  color: var(--brand-green-color);
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 19px;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 1px solid var(--brand-green-color);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border: 1px solid var(--brand-green-color-hover);
+  }
+
+  &.active,
+  &:hover {
+    color: var(--always-white-color);
+    background-color: var(--brand-green-color-hover);
+  }
+
+  &.active {
+    background-color: var(--brand-green-color);
+
+    &:hover {
+      background-color: var(--brand-green-color-hover);
+    }
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.horizontal-scroll {
+  overflow: hidden;
+}
+
+.separator-for-items {
+  margin: 0 5px;
+}

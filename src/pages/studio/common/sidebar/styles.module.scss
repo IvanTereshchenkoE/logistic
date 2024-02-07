@@ -1,0 +1,42 @@
+@import 'assets/css/styles.scss';
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--green-200-header-menu-background);
+  border-right: 1px solid var(--text-gray-color);
+}
+
+.button path {
+  fill: var(--sidebar-studio-icon-color);
+}
+
+.active svg path {
+  fill: var(--brand-green-color);
+}
+
+.button {
+  padding: 15px;
+
+  &:hover {
+    cursor: pointer;
+
+    & path {
+      transition: all 0.3s ease;
+      fill: var(--sidebar-studio-icon-hover-color);
+    }
+  }
+}
+
+.active:hover svg path {
+  fill: var(--brand-green-color);
+}
+
+.logo-button {
+  padding: 15px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

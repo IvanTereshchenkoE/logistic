@@ -1,0 +1,58 @@
+@use 'assets/css/breakpoint';
+
+$delay: 200ms;
+$timing-function: ease-out;
+
+/* this module styles sliders and so needs non-standard rules */
+/* stylelint-disable property-no-vendor-prefix */
+.volume-wrapper {
+  display: none;
+  align-items: center;
+  gap: 5px;
+
+  @media #{breakpoint.$tablet-small} {
+    display: flex;
+  }
+}
+
+.volume-slider {
+  width: 0;
+  max-width: 0;
+  will-change: transform, width, max-width;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: width $delay $timing-function, max-width $delay $timing-function, transform $delay $timing-function;
+}
+
+@mixin thumb-initial {
+  transform: scale(0);
+  opacity: 0;
+  transition: transform $delay $timing-function, opacity $delay $timing-function;
+}
+
+.volume-slider::-moz-range-thumb {
+  @include thumb-initial;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  @include thumb-initial;
+}
+
+.volume-wrapper:hover .volume-slider {
+  width: calc(80px * clamp(1, var(--size-modifier, 1), 1.5));
+  max-width: calc(80px * clamp(1, var(--size-modifier, 1), 1.5));
+  transform: scaleX(1);
+
+  @mixin visible-thumb {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &::-moz-range-thumb {
+    @include visible-thumb;
+  }
+
+  &::-webkit-slider-thumb {
+    @include visible-thumb;
+  }
+}
